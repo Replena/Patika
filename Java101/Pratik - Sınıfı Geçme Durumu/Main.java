@@ -43,13 +43,13 @@ public class Main {
             muzik = 0;
             totalLesson--;
         }
-        double avarage = (mat + turkce + fizik + kimya + muzik) / totalLesson;
+        double average = (mat + turkce + fizik + kimya + muzik) / totalLesson;
 
-        if (avarage >= 55) {
+        if (average >= 55) {
             System.out.println("Tebrikler, Sınıfı Geçtiniz");
         } else {
             System.out.println("Sınıfta Kaldınız.");
         }
-        System.out.println("Ortalamanız : " + avarage);
+        System.out.println("Ortalamanız : " + average);
     }
 }
