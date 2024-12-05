@@ -18,7 +18,10 @@ public class Fighter {
 
     int hit(Fighter foe) {
         System.out.println(this.name + " => " + foe.name + " " + this.damage + " hasar vurdu. ");
-        return 0;
+        if (foe.health - this.damage < 0) {
+            return 0;
+        }
+        return foe.health -= this.damage;
 
     }
 
