@@ -16,16 +16,19 @@ public class Match {
 
     public void run() {
         if (isChecked()) {
-
+            boolean isF1Turn = Math.random() < 0.5;
             while (this.f1.health > 0 && this.f2.health > 0) {
                 System.out.println("=====YENİ ROUND=====");
-                this.f2.health = this.f1.hit(this.f2);
-                if (isWin()) {
-                    break;
-                }
-                this.f1.health = this.f2.hit(this.f1);
-                if (isWin()) {
-                    break;
+                if (isF1Turn) {
+                    this.f2.health = this.f1.hit(this.f2);
+                    if (isWin()) {
+                        break;
+                    }
+                } else {
+                    this.f1.health = this.f2.hit(this.f1);
+                    if (isWin()) {
+                        break;
+                    }
                 }
                 System.out.println(this.f1.name + " sağlığı " + this.f1.health + " kaldı.");
                 System.out.println(this.f2.name + " sağlığı " + this.f2.health + " kaldı.");
