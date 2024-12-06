@@ -72,15 +72,27 @@ public class MineSweeper {
     }
 
     public void addMine() {
-        int mineCount = 0;
+        if (level == (row * column) - 1) {
+            for (int i = 0; i < row; i++) {
+                for (int j = 0; j < column; j++) {
+                    map[i][j] = -1;
+                }
+            }
 
-        while (mineCount < level) {
             int randRow = random.nextInt(row);
             int randCol = random.nextInt(column);
+            map[randRow][randCol] = 0;
+        } else {
+            int mineCount = 0;
 
-            if (map[randRow][randCol] != -1) {
-                map[randRow][randCol] = -1;
-                mineCount++;
+            while (mineCount < level) {
+                int randRow = random.nextInt(row);
+                int randCol = random.nextInt(column);
+
+                if (map[randRow][randCol] != -1) {
+                    map[randRow][randCol] = -1;
+                    mineCount++;
+                }
             }
         }
     }

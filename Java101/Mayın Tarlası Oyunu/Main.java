@@ -16,8 +16,8 @@ public class Main {
         System.out.print("Column Number = ");
         column = input.nextInt();
 
-        while (!(1 <= choose && choose <= 3)) {
-            System.out.println("Please choose a game level\n1-Easy\n2-Medium\n3-Hard");
+        while (!(1 <= choose && choose <= 4)) {
+            System.out.println("Please choose a game level\n1-Easy\n2-Medium\n3-Hard\n4-GOD TIER");
             System.out.print("Game Level = ");
             choose = input.nextInt();
 
@@ -28,6 +28,9 @@ public class Main {
                     level = (row * column) / 4;
                 case 3 ->
                     level = (row * column) / 2;
+                case 4 -> {
+                    level = (row * column) - 1;
+                }
                 default ->
                     System.out.println("Please enter a valid level! Try again.");
             }
